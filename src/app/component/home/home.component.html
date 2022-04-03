@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6 mb-3" *ngFor="let prodotto of prodottiInArrivo; let i = index">
+      <div class="card h-100">
+        <img [src]="" class="card-img-top" alt="">
+        <div class="card-body">
+          <h3 class="card-title">{{prodotto.name}}</h3>
+          <h3 class="card-text">{{prodotto.price}} €</h3>
+          <a class="btn btn-warning me-1" [routerLink]="['dettagli/',prodotto.id]" routerLinkActive='active'>Dettagli</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

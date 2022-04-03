@@ -1,0 +1,50 @@
+<div class="container">
+
+  <div *ngIf="listaProdotti.length > 0 ; else carrellovuoto">
+      <h5>Articoli</h5>
+      <div *ngFor="let articolo of listaProdotti; let i = index">
+
+
+
+
+
+
+
+
+                   <div>
+                       {{articolo.name}} <span> {{ articolo.price | currency: 'EUR' }} </span>
+                      </div>
+
+
+
+
+
+      </div>
+      <form>
+
+          <div class="form-group">
+              <h5>Completa ordine</h5>
+              <label class="col-sm-2 col-form-label">Nome</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" id="nome">
+              </div>
+          </div>
+          <div class="form-group ">
+              <label class="col-sm-2 col-form-label">Indirizzo</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" id="indirizzo">
+                  <button type="button" class="btn btn-primary mt-3" (click)="inviaOrdine()">Invia</button>
+              </div>
+          </div>
+      </form>
+
+  </div>
+</div>
+
+
+
+<ng-template #carrellovuoto>
+  <div class="d-flex justify-content-center mt-5">
+      <h3>Il carrello è vuoto </h3>
+  </div>
+</ng-template>
